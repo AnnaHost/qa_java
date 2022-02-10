@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class LionTest {
 
     @Test
-    public void createLionMale(){
+    public void createLionMaleTest(){
         Feline feline = new Feline();
         try {
             Lion lion = new Lion("Самец",feline);
@@ -19,7 +19,7 @@ public class LionTest {
     }
 
     @Test
-    public void createLionFemale(){
+    public void createLionFemaleTest(){
         Feline feline = new Feline();
         try {
             Lion lion = new Lion("Самка",feline);
@@ -30,7 +30,7 @@ public class LionTest {
     }
 
     @Test
-    public void createLion(){
+    public void createLionTest(){
         Feline feline = new Feline();
         try {
             Lion lion = new Lion("Львёнок",feline);
@@ -54,7 +54,7 @@ public class LionTest {
     }
 
     @Test
-    public void doesHaveMane() {
+    public void doesHaveManeTest() {
         Feline feline = new Feline();
         try {
             Lion lion = new Lion("Самец",feline);
@@ -67,7 +67,7 @@ public class LionTest {
     }
 
     @Test
-    public void getFood() {
+    public void getFoodTest() {
         Feline feline = new Feline();
         try {
             Lion lion = new Lion("Самец",feline);

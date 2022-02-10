@@ -3,6 +3,8 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 @RunWith(Parameterized.class)
 public class FelineTest {
@@ -22,13 +24,13 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittens() {
+    public void getKittensTest() {
         Feline feline = new Feline();
         feline.getKittens(kittensCount);
     }
 
     @Test
-    public void eatMeat() {
+    public void eatMeatTest() {
         try {
             Feline feline = new Feline();
             feline.eatMeat();
@@ -39,13 +41,26 @@ public class FelineTest {
     }
 
     @Test
-    public void getFamily() {
+    public void getFamilyTest() {
         try {
             Feline feline = new Feline();
             feline.getFamily();
         }
         catch (Exception exception){
             System.out.println("Ошибка в методе getFamily");
+        }
+    }
+
+    @Mock
+    Feline feline;
+
+    @Test
+    public void getFoodTest(){
+        try {
+            feline.getFood("Травоядное");
+            Mockito.verify(feline).getFood("Травоядное");
+        } catch (Exception exception) {
+            System.out.println("Ошибка в методе getFoodTest");
         }
     }
 }
