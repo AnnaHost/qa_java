@@ -50,17 +50,4 @@ public class FelineTest {
             System.out.println("Ошибка в методе getFamily");
         }
     }
-
-    @Mock
-    Feline feline;
-
-    @Test
-    public void getFoodTest(){
-        try {
-            feline.getFood("Травоядное");
-            Mockito.verify(feline).getFood("Травоядное");
-        } catch (Exception exception) {
-            System.out.println("Ошибка в методе getFoodTest");
-        }
-    }
 }

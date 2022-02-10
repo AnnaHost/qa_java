@@ -3,6 +3,7 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 
 import static org.junit.Assert.*;
 public class LionTest {
@@ -14,7 +15,7 @@ public class LionTest {
             Lion lion = new Lion("Самец",feline);
         }
         catch (Exception exception){
-            System.out.println("Ошибка в методе createLionMale");
+            System.out.println(exception);
         }
     }
 
@@ -25,7 +26,7 @@ public class LionTest {
             Lion lion = new Lion("Самка",feline);
         }
         catch (Exception exception){
-            System.out.println("Ошибка в методе createLionFemale");
+            System.out.println(exception);
         }
     }
 
@@ -36,7 +37,7 @@ public class LionTest {
             Lion lion = new Lion("Львёнок",feline);
         }
         catch (Exception exception){
-            System.out.println("Ошибка в методе createLion");
+            System.out.println(exception);
         }
     }
 
@@ -48,7 +49,7 @@ public class LionTest {
             lion.getKittens();
         }
         catch (Exception exception) {
-            System.out.println("Ошибка в методе getKittens");
+            System.out.println(exception);
         }
 
     }
@@ -61,7 +62,7 @@ public class LionTest {
             lion.doesHaveMane();
         }
         catch (Exception exception){
-            System.out.println("Ошибка в методе doesHaveMane");
+            System.out.println(exception);
         }
 
     }
@@ -74,7 +75,7 @@ public class LionTest {
             lion.getFood();
         }
         catch (Exception exception){
-            System.out.println("Ошибка в методе getFood");
+            System.out.println(exception);
         }
     }
 }

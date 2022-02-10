@@ -13,7 +13,6 @@ public class CatTest {
     @Mock
     Cat cat;
 
-
     @Test
     public void getSoundTest() {
         cat.getSound();
@@ -28,7 +27,7 @@ public class CatTest {
             cat.getFood();
         }
         catch (Exception exception) {
-            System.out.println("Ошибка в методе getFoodTest");
+            System.out.println(exception);
         }
     }
 }
