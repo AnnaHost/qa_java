@@ -1,12 +1,11 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
@@ -16,7 +15,7 @@ public class CatTest {
     @Test
     public void getSoundTest() {
         cat.getSound();
-        Mockito.verify(cat, Mockito.times(1)).getSound();
+        String actual = Mockito.verify(cat, Mockito.times(1)).getSound();
     }
 
     @Test
@@ -25,8 +24,10 @@ public class CatTest {
         Cat cat = new Cat(feline);
         try {
             cat.getFood();
-        }
-        catch (Exception exception) {
+            String expected = "[Животные, Птицы, Рыба]";
+            String actual = cat.getFood().toString();
+            Assert.assertEquals(expected,actual);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
     }

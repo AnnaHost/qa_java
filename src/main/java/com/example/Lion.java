@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Lion {
 
-    private Feline feline;
     boolean hasMane;
+    private Feline feline;
 
     public Lion(String sex, Feline feline) throws Exception {
-        this.feline=feline;
+        this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {

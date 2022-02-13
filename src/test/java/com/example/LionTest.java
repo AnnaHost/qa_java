@@ -1,42 +1,39 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.mockito.Mock;
 
-import static org.junit.Assert.*;
 public class LionTest {
 
     @Test
-    public void createLionMaleTest(){
+    public void createLionMaleTest() {
         Feline feline = new Feline();
         try {
-            Lion lion = new Lion("Самец",feline);
-        }
-        catch (Exception exception){
+            Lion lion = new Lion("Самец", feline);
+            Assert.assertNotNull(lion);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
     }
 
     @Test
-    public void createLionFemaleTest(){
+    public void createLionFemaleTest() {
         Feline feline = new Feline();
         try {
-            Lion lion = new Lion("Самка",feline);
-        }
-        catch (Exception exception){
+            Lion lion = new Lion("Самка", feline);
+            Assert.assertNotNull(lion);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
     }
 
     @Test
-    public void createLionTest(){
+    public void createLionTest() {
         Feline feline = new Feline();
         try {
-            Lion lion = new Lion("Львёнок",feline);
-        }
-        catch (Exception exception){
+            Lion lion = new Lion("Львёнок", feline);
+            Assert.assertNull(lion);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
     }
@@ -45,10 +42,11 @@ public class LionTest {
     public void getKittens() {
         Feline feline = new Feline();
         try {
-            Lion lion = new Lion("Самец",feline);
-            lion.getKittens();
-        }
-        catch (Exception exception) {
+            Lion lion = new Lion("Самец", feline);
+            int expected = 1;
+            int actual = lion.getKittens();
+            Assert.assertEquals(expected, actual);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
 
@@ -58,10 +56,11 @@ public class LionTest {
     public void doesHaveManeTest() {
         Feline feline = new Feline();
         try {
-            Lion lion = new Lion("Самец",feline);
-            lion.doesHaveMane();
-        }
-        catch (Exception exception){
+            Lion lion = new Lion("Самец", feline);
+            boolean expected = true;
+            boolean actual = lion.doesHaveMane();
+            Assert.assertEquals(expected, actual);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
 
@@ -71,10 +70,11 @@ public class LionTest {
     public void getFoodTest() {
         Feline feline = new Feline();
         try {
-            Lion lion = new Lion("Самец",feline);
-            lion.getFood();
-        }
-        catch (Exception exception){
+            Lion lion = new Lion("Самец", feline);
+            String expected = "[Животные, Птицы, Рыба]";
+            String actual = lion.getFood().toString();
+            Assert.assertEquals(expected,actual);
+        } catch (Exception exception) {
             System.out.println(exception);
         }
     }
