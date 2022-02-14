@@ -10,7 +10,6 @@ public class FelineTest {
 
     private final int kittensCount;
 
-
     public FelineTest(int kittensCount) {
         this.kittensCount = kittensCount;
     }
@@ -26,31 +25,23 @@ public class FelineTest {
     public void getKittensTest() {
         Feline feline = new Feline();
         int actual = feline.getKittens(kittensCount);
-        Assert.assertEquals(kittensCount,actual);
+        Assert.assertEquals(kittensCount, actual);
 
     }
 
     @Test
-    public void eatMeatTest() {
-        try {
-            Feline feline = new Feline();
-            String expected = "[Животные, Птицы, Рыба]";
-            String actual = feline.eatMeat().toString();
-            Assert.assertEquals(expected,actual);
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
+    public void eatMeatTest() throws Exception {
+        Feline feline = new Feline();
+        String expected = "[Животные, Птицы, Рыба]";
+        String actual = feline.eatMeat().toString();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void getFamilyTest() {
-        try {
-            Feline feline = new Feline();
-            String actual = feline.getFamily();
-            String expected = "Кошачьи";
-            Assert.assertEquals(expected,actual);
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
+        Feline feline = new Feline();
+        String actual = feline.getFamily();
+        String expected = "Кошачьи";
+        Assert.assertEquals(expected, actual);
     }
 }

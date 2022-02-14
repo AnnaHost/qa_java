@@ -15,20 +15,16 @@ public class CatTest {
     @Test
     public void getSoundTest() {
         cat.getSound();
-        String actual = Mockito.verify(cat, Mockito.times(1)).getSound();
+        Mockito.verify(cat, Mockito.times(1)).getSound();
     }
 
     @Test
-    public void getFoodTest() {
+    public void getFoodTest() throws Exception {
         Feline feline = new Feline();
         Cat cat = new Cat(feline);
-        try {
-            cat.getFood();
-            String expected = "[Животные, Птицы, Рыба]";
-            String actual = cat.getFood().toString();
-            Assert.assertEquals(expected,actual);
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
+        cat.getFood();
+        String expected = "[Животные, Птицы, Рыба]";
+        String actual = cat.getFood().toString();
+        Assert.assertEquals(expected, actual);
     }
 }
